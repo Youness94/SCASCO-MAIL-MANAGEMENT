@@ -6,13 +6,23 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Production;
+use App\Models\Sinistre;
+use App\Models\SinistreDim;
 
 class AdminController extends Controller
 {
     public function AdminDashboard()
-    {
-        return view('admin.index');
-    }
+{
+    $productions = Production::with('branches', 'compagnies', 'act_gestions', 'charge_comptes')->get();
+    $sinistres_dim = SinistreDim::with('branches_dim', 'compagnies', 'acte_de_gestion_dim', 'charge_compte_dim')->get();
+    $sinistres = Sinistre::with('branches_sinistres', 'compagnies', 'acte_de_gestion_sinistres', 'charge_compte_sinistres')->get();
+    $totalProduction = Production::count(); 
+    $totalSinistreDim = SinistreDim::count();
+    $totalSinistreAt_Rd = Sinistre::count();
+
+    return view('admin.index', compact('totalProduction', 'totalSinistreDim', 'totalSinistreAt_Rd', 'sinistres_dim', 'sinistres', 'productions'));
+}
 
     public function AdminLogout(Request $request)
     {

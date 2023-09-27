@@ -45,21 +45,21 @@ class UsersTableSeeder extends Seeder
             ],
              // Agent
             [
-                'name'=>'Agent',
-                'username' => 'agent',
-                'email'=> 'agent@gmail.com',
+                'name'=>'Responsable',
+                'username' => 'responsable',
+                'email'=> 'responsable@gmail.com',
                 'password' => Hash::make('111'),
-                'role' => 'agent',
+                'role' => 'responsable',
                 'status' => 'active',
             ],
              
             [
-                'name'=>'Agent2',
-                'username' => 'agent2',
-                'email'=> 'agent2@gmail.com',
+                'name'=>'Responsable2',
+                'username' => 'responsable2',
+                'email'=> 'responsable2@gmail.com',
                 'password' => Hash::make('111'),
-                'role' => 'agent',
-                'status' => 'active',
+                'role_id' => 'responsable',
+                'status_id' => 'active',
             ],
              
              

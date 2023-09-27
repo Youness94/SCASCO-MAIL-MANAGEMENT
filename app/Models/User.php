@@ -37,4 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function userRole()
+    {
+        return $this->belongsTo(UserRole::class, 'role_id');
+    } 
+    
+    public function userStatu()
+    {
+        return $this->belongsTo(UserStatu::class, 'status_id');
+    }
 }

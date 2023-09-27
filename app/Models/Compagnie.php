@@ -22,4 +22,10 @@ class Compagnie extends Model
 {
     return $this->belongsToMany(Production::class, 'compagnie_production', 'compagnie_id', 'production_id');
 }
+
+public function sinistres()
+{
+    return $this->belongsToMany(Sinistre::class);
+    
+}
 }

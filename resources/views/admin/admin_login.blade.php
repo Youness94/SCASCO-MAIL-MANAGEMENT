@@ -37,65 +37,65 @@
 	<!-- endinject -->
 
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="{{asset('../../../assets/css/demo2/style.css')}}">
+	<link rel="stylesheet" href="{{asset('../../../assets/css/demo1/style.css')}}">
   <!-- End layout styles -->
 
   <link rel="shortcut icon" href="{{asset('../../../assets/images/favicon.png')}}" />
 </head>
 <body>
-	<div class="main-wrapper">
-		<div class="page-wrapper full-page">
-			<div class="page-content d-flex align-items-center justify-content-center">
+<div class="main-wrapper">
+    <div class="page-wrapper full-page">
 
-				<div class="row w-100 mx-0 auth-page">
-					<div class="col-md-8 col-xl-6 mx-auto">
-						<div class="card">
-							<div class="row">
-                <div class="col-md-4 pe-md-0">
-                  <div class="authlogin-side-wrapper">
+        <div class="page-content d-flex align-items-center justify-content-center">
 
-                  </div>
+            <div class="row w-100 mx-0 auth-page">
+                <div class="col-md-8 col-xl-6 mx-auto">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-4 pe-md-0">
+                                <div class="authlogin-side-wrapper">
+                                    <!-- Add content here if needed -->
+                                </div>
+                            </div>
+                            <div class="col-md-8 ps-md-0">
+                                <div class="auth-form-wrapper px-4 py-5">
+                                <div class="col-lg-6">
+                                    <img src="{{ asset('upload/scasco_logo.png') }}" alt="Example Image" class="img-fluid">
+                                </div><br/>
+                                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
+                                    <form class="forms-sample" method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="mb-3">
+                                            <label for="login" class="form-label">Email / Name</label>
+                                            <input type="text" name="login" class="form-control" id="login" placeholder="Email / Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" name="password" class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input type="checkbox" class="form-check-input" id="authCheck">
+                                            <label class="form-check-label" for="authCheck">
+                                                {{ __('Remember me') }}
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                                                Login
+                                            </button>
+                                        </div>
+                                        <a href="/responsable/login" class="d-block mt-3 text-muted">Responsable login</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8 ps-md-0">
-                  <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">SCA<span>SCO</span></a>
-                    <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
-                    <form class="forms-sample" method="POST" action="{{ route('login') }}">
-                        @csrf
-                      <div class="mb-3">
-                        <label for="login" class="form-label">Email / Name</label>
-                        <input type="text" name='login' class="form-control" id="login" placeholder="Email / Name">
-                      </div>
-                      <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name='password' class="form-control" id="userPassword" autocomplete="current-password" placeholder="Password">
-                      </div>
-                      <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="authCheck">
-                        <label class="form-check-label" for="authCheck">
-                        {{ __('Remember me') }}
-                        </label>
-                      </div>
-                      <div>
+            </div>
 
-                        <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
-                              Login
-                        </button>
-
-                      </div>
-                      <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>
-                    </form>
-                  </div>
-                </div>
-              </div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
+        </div>
+    </div>
+</div>
 	<!-- core:js -->
 	<script src="{{asset('../../../assets/vendors/core/core.js')}}"></script>
 	<!-- endinject -->

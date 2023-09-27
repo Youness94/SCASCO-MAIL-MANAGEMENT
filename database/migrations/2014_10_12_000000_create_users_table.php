@@ -19,9 +19,12 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('photo')->nullable();
-            $table->enum('role', ['admin','agent'])->default('agent');
-            $table->enum('status', ['active','inactive'])->default('active');
+            // $table->string('role')->nullable();
+            // $table->string('status')->nullable();
 
+            
+            $table->enum('role', ['admin','responsable'])->default('admin');
+            $table->enum('status', ['active','inactive'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -35,3 +38,18 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+
+
+// $table->foreignId('user_role_id')
+            //     ->constrained('users_roles')
+            //     ->references('id')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade')
+            //     ->name('users_roles');
+
+            // $table->foreignId('user_status_id')
+            //     ->constrained('users_status')
+            //     ->references('id')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade')
+            //     ->name('users_status');

@@ -73,7 +73,6 @@
 
 
 			@yield('admin')
-			@yield('client')
 			
 
 			<!-- partial:partials/_footer.html -->
@@ -82,7 +81,7 @@
 		
 		</div>
 	</div>
-
+	
 	<!-- core:js -->
 	<script src="{{asset('../assets/vendors/core/core.js')}}"></script>
 	<!-- endinject -->
